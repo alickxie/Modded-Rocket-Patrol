@@ -11,10 +11,6 @@ class Menu extends Phaser.Scene{
     }
 
     create(){
-        // this.add.text(20, 20, "Rocket Patrol Menu");
-
-        // // change scenes
-        // this.scene.start("playScene");
 
         // menu text configuration
         let menuConfig = {
@@ -49,10 +45,10 @@ class Menu extends Phaser.Scene{
             // easy mode
             game.settings = {
                 spaceshipSpeed: 3,
-                gameTimer: 60000
+                gameTimer: 10000
             }
             this.sound.play('sfx_select');
-            this.scene.start('playScene');
+            this.scene.start('playScene1');
         }
         if (Phaser.Input.Keyboard.JustDown(keyRIGHT)){
             // hare mode
@@ -61,7 +57,7 @@ class Menu extends Phaser.Scene{
                 gameTimer: 45000
             }
             this.sound.play('sfx_select');
-            this.scene.start('playScene');
+            this.scene.start('playScene2');
         }
     }
 }

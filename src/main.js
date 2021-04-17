@@ -3,7 +3,7 @@ let config = {
     type: Phaser.CANVAS,
     width: 640,
     height: 480,
-    scene: [Menu, Play]
+    scene: [Menu, SinglePlayer, TwoPlayer]
 }
 
 let game = new Phaser.Game(config);
@@ -14,4 +14,7 @@ let borderPadding = borderUIsize / 3;
 let starSpeed = 3;
 
 // reserve keyboard bindings
-let keyF, keyR, keyLEFT, keyRIGHT;
+let keyUP, keyLEFT, keyRIGHT, keyW, keyA, keyD, keyR;
+
+// reserve for highScore
+let high_Score = 0;
