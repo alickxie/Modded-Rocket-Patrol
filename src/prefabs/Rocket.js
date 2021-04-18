@@ -15,15 +15,15 @@ class Rocket1 extends Phaser.GameObjects.Sprite {
     update() {
         // left/right movement
         if (true) {
-            if (keyLEFT.isDown && this.x >= borderUIsize + this.width) {
+            if (keyA.isDown && this.x >= borderUIsize + this.width) {
                 this.x -= this.moveSpeed;
-            } else if (keyRIGHT.isDown && this.x <= game.config.width - borderUIsize - this.width) {
+            } else if (keyD.isDown && this.x <= game.config.width - borderUIsize - this.width) {
                 this.x += this.moveSpeed;
             }
         }
 
         //fire button
-        if (Phaser.Input.Keyboard.JustDown(keyUP) && !this.isFiring){
+        if (Phaser.Input.Keyboard.JustDown(keyW) && !this.isFiring){
             this.isFiring = true;
             // this.sfxRocket.play(); // play the rocket sfxs
         }
@@ -61,15 +61,15 @@ class Rocket2 extends Phaser.GameObjects.Sprite {
     update() {
         // left/right movement
         if (true) {
-            if (keyA.isDown && this.x >= borderUIsize + this.width) {
+            if (keyLEFT.isDown && this.x >= borderUIsize + this.width) {
                 this.x -= this.moveSpeed;
-            } else if (keyD.isDown && this.x <= game.config.width - borderUIsize - this.width) {
+            } else if (keyRIGHT.isDown && this.x <= game.config.width - borderUIsize - this.width) {
                 this.x += this.moveSpeed;
             }
         }
 
         //fire button
-        if (Phaser.Input.Keyboard.JustDown(keyW) && !this.isFiring){
+        if (Phaser.Input.Keyboard.JustDown(keyUP) && !this.isFiring){
             this.isFiring = true;
             // this.sfxRocket.play(); // play the rocket sfxs
         }
