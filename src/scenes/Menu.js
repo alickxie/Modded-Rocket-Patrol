@@ -54,7 +54,7 @@ class Menu1 extends Phaser.Scene {
             // easy mode
             game.settings = {
                 spaceshipSpeed: 3,
-                gameTimer: 60000
+                gameTimer: 6000
             }
             this.sound.play('sfx_select');
             this.scene.start('playScene1');
@@ -63,7 +63,7 @@ class Menu1 extends Phaser.Scene {
             // hare mode
             game.settings = {
                 spaceshipSpeed: 4,
-                gameTimer: 45000
+                gameTimer: 6000
             }
             this.sound.play('sfx_select');
             this.scene.start('playScene1');
@@ -132,7 +132,7 @@ class Menu2 extends Phaser.Scene {
             // easy mode
             game.settings = {
                 spaceshipSpeed: 3,
-                gameTimer: 60000
+                gameTimer: 6000
             }
             this.sound.play('sfx_select');
             this.scene.start('playScene2');
@@ -141,7 +141,7 @@ class Menu2 extends Phaser.Scene {
             // hare mode
             game.settings = {
                 spaceshipSpeed: 4,
-                gameTimer: 45000
+                gameTimer: 6000
             }
             this.sound.play('sfx_select');
             this.scene.start('playScene2');
