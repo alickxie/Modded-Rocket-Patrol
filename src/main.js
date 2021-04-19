@@ -11,7 +11,7 @@ let game = new Phaser.Game(config);
 // set UI sizes
 let borderUIsize = game.config.height / 15;
 let borderPadding = borderUIsize / 3;
-let starSpeed = 3;
+let starSpeed = 1.3;
 
 // reserve keyboard bindings
 let keyUP, keyDOWN, keyLEFT, keyRIGHT, keyW, keyA, keyD, keyR;

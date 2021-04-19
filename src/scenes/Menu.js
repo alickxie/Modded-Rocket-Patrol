@@ -6,8 +6,8 @@ class Menu1 extends Phaser.Scene {
     preload() {
         // load audio
         this.load.audio('sfx_select', './assets/blip_select12.wav');
-        this.load.audio('sfx_explosion', './assets/explosion38.wav');
-        this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+        this.load.audio('sfx_explosion', './assets/duck-cry.wav');
+        this.load.audio('sfx_rocket', './assets/arrow-Hit.wav');
     }
 
     create() {
@@ -32,8 +32,10 @@ class Menu1 extends Phaser.Scene {
         keyDOWN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN);
 
         // show menu text
+        menuConfig.fontSize = '46px'
         this.add.text(game.config.width / 2, game.config.height / 2 - borderUIsize -
-            borderPadding, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
+            borderPadding*4, 'DUCK HUNT', menuConfig).setOrigin(0.5);
+        menuConfig.fontSize = '28px'
         this.add.text(game.config.width / 2, game.config.height / 2, 'Use (A)(D) to move & (W) to fire',
             menuConfig).setOrigin(0.5);
         menuConfig.color = '#000';
@@ -53,8 +55,8 @@ class Menu1 extends Phaser.Scene {
         if (Phaser.Input.Keyboard.JustDown(keyLEFT)) {
             // easy mode
             game.settings = {
-                spaceshipSpeed: 3,
-                gameTimer: 6000
+                spaceshipSpeed: 4,
+                gameTimer: 60000
             }
             this.sound.play('sfx_select');
             this.scene.start('playScene1');
@@ -62,8 +64,8 @@ class Menu1 extends Phaser.Scene {
         if (Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
             // hare mode
             game.settings = {
-                spaceshipSpeed: 4,
-                gameTimer: 6000
+                spaceshipSpeed: 5,
+                gameTimer: 45000
             }
             this.sound.play('sfx_select');
             this.scene.start('playScene1');
@@ -84,8 +86,8 @@ class Menu2 extends Phaser.Scene {
     preload() {
         // load audio
         this.load.audio('sfx_select', './assets/blip_select12.wav');
-        this.load.audio('sfx_explosion', './assets/explosion38.wav');
-        this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+        this.load.audio('sfx_explosion', './assets/duck-cry.wav');
+        this.load.audio('sfx_rocket', './assets/arrow-Hit.wav');
     }
 
     create() {
@@ -131,8 +133,8 @@ class Menu2 extends Phaser.Scene {
         if (Phaser.Input.Keyboard.JustDown(keyLEFT)) {
             // easy mode
             game.settings = {
-                spaceshipSpeed: 3,
-                gameTimer: 6000
+                spaceshipSpeed: 4,
+                gameTimer: 60000
             }
             this.sound.play('sfx_select');
             this.scene.start('playScene2');
@@ -140,8 +142,8 @@ class Menu2 extends Phaser.Scene {
         if (Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
             // hare mode
             game.settings = {
-                spaceshipSpeed: 4,
-                gameTimer: 6000
+                spaceshipSpeed: 5,
+                gameTimer: 45000
             }
             this.sound.play('sfx_select');
             this.scene.start('playScene2');

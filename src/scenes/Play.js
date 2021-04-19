@@ -7,12 +7,13 @@ class SinglePlayer extends Phaser.Scene {
     preload() {
         //load iamges/tile sprites
         this.load.image('rocket', './assets/rocket.png');
-        this.load.image('spaceship', './assets/spaceship.png');
         this.load.image('starfield', './assets/starfield.png');
+        this.load.image('spaceship', './assets/spaceship.png');
+
         // load spritesheet
         this.load.spritesheet('explosion', './assets/explosion.png', {
-            frameWidth: 64,
-            frameHeight: 32,
+            frameWidth: 46,
+            frameHeight: 41,
             startFrame: 0,
             endFrame: 9
         });
@@ -36,9 +37,21 @@ class SinglePlayer extends Phaser.Scene {
             config.height, 0xFFFFFF).setOrigin
             (0, 0);
 
+        // animation config
+        this.anims.create({
+            key: 'explode',
+            frames: this.anims.generateFrameNumbers('explosion', {
+                start: 0,
+                end: 9,
+                first: 0
+            }),
+            frameRate: 30
+        });
+
+
         // add rocket (Player 1)
         this.p1Rocket = new Rocket1(this, game.config.width / 2, game.config.height -
-            borderUIsize - borderPadding, 'rocket').setOrigin(0.5, 0);
+            borderUIsize - borderPadding * 2.5, 'rocket').setOrigin(0.5, 0);
 
         // add sapceship (x3)
         this.ship01 = new Spaceship(this, game.config.width + borderUIsize * 6, borderUIsize * 4,
@@ -54,22 +67,11 @@ class SinglePlayer extends Phaser.Scene {
         keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
-        
-
-        // animation config
-        this.anims.create({
-            key: 'explode',
-            frames: this.anims.generateFrameNumbers('explosion', {
-                start: 0,
-                end: 9,
-                first: 0
-            }),
-            frameRate: 30
-        });
 
         // initial score
         this.p1Score = 0;
         this.highScore = high_Score;
+
         // display score
         let scoreConfig = {
             fontFamily: 'Courier',
@@ -175,7 +177,7 @@ class SinglePlayer extends Phaser.Scene {
         // Adress the display score with current scores
         this.scoreLeft.text = this.p1Score;
         this.scoreRight.text = this.highScore;
-        // this.sound.play('sfx_explosion');
+        this.sound.play('sfx_explosion');
     }
 }
 
@@ -188,12 +190,13 @@ class TwoPlayer extends Phaser.Scene {
     preload() {
         //load iamges/tile sprites
         this.load.image('rocket', './assets/rocket.png');
+        this.load.image('rocket2', './assets/rocket2.png');
         this.load.image('spaceship', './assets/spaceship.png');
         this.load.image('starfield', './assets/starfield.png');
         // load spritesheet
         this.load.spritesheet('explosion', './assets/explosion.png', {
-            frameWidth: 64,
-            frameHeight: 32,
+            frameWidth: 46,
+            frameHeight: 41,
             startFrame: 0,
             endFrame: 9
         });
@@ -217,11 +220,11 @@ class TwoPlayer extends Phaser.Scene {
             config.height, 0xFFFFFF).setOrigin
             (0, 0);
 
-        // add rocket (Player 1)
+        // add rocket (Player x2)
         this.p1Rocket = new Rocket1(this, game.config.width / 4, game.config.height -
-            borderUIsize - borderPadding, 'rocket').setOrigin(0.5, 0);
+            borderUIsize - borderPadding * 2.5, 'rocket').setOrigin(0.5, 0);
         this.p2Rocket = new Rocket2(this, game.config.width / 2, game.config.height -
-            borderUIsize - borderPadding, 'rocket').setOrigin(0.5, 0);
+            borderUIsize - borderPadding * 2.5, 'rocket2').setOrigin(0.5, 0);
 
         // add sapceship (x3)
         this.ship01 = new Spaceship(this, game.config.width + borderUIsize * 6, borderUIsize * 4,
@@ -269,8 +272,10 @@ class TwoPlayer extends Phaser.Scene {
             },
             fixedWidth: 0
         }
+        scoreConfig.color = '#FFEB3B';
         this.add.text(borderUIsize + borderPadding * 2, borderUIsize + borderPadding * 2, 'P1: ',
             scoreConfig);
+        scoreConfig.color = '#843605';
         this.scoreLeft = this.add.text(borderUIsize + borderPadding * 7, borderUIsize + borderPadding * 2, this.p1Score,
             scoreConfig);
 
@@ -279,9 +284,11 @@ class TwoPlayer extends Phaser.Scene {
         this.scoreMid = this.add.text(borderUIsize + borderPadding * 34, borderUIsize + borderPadding * 2, this.highScore,
             scoreConfig);
 
+        scoreConfig.color = '#F44336';
         this.add.text(borderUIsize + borderPadding * 44, borderUIsize + borderPadding * 2, 'P2: ',
             scoreConfig);
-        this.scoreRight = this.add.text(borderUIsize + borderPadding*49, borderUIsize + borderPadding * 2, this.p2Score,
+        scoreConfig.color = '#843605';
+        this.scoreRight = this.add.text(borderUIsize + borderPadding * 49, borderUIsize + borderPadding * 2, this.p2Score,
             scoreConfig);
 
         // GAME OVER flag
@@ -396,6 +403,6 @@ class TwoPlayer extends Phaser.Scene {
             this.scoreRight.text = this.p2Score;
             this.scoreMid.text = this.highScore;
         }
-        // this.sound.play('sfx_explosion');
+        this.sound.play('sfx_explosion');
     }
 }
