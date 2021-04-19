@@ -1,0 +1,13 @@
+# Modded-Rocket-Patrol
+The UCSC CMPM120 HW2
+04/20/2021
+
+Name: Yufeng Xie
+Time: cost 8-9hours
+
+Poins breakdown:
+Track a high score that persists across scenes and display it in the UI (5)
+Allow the player to control the Rocket after it's fired (5)
+Implement a simultaneous two-player mode (30)
+Redesign the game's artwork, UI, and sound to change its theme/aesthetic (to something other than sci-fi) (60)
+TOTAL: (5 + 5 + 30 + 60 = 100)
