@@ -5,7 +5,7 @@ The UCSC CMPM120 HW2
 Name: Yufeng Xie
 Time: cost 8-9hours
 
-Poins breakdown:
+Points breakdown:
 Track a high score that persists across scenes and display it in the UI (5)
 Allow the player to control the Rocket after it's fired (5)
 Implement a simultaneous two-player mode (30)
