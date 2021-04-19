@@ -25,7 +25,7 @@ class SinglePlayer extends Phaser.Scene {
 
         // green UI background
         this.add.rectangle(0, borderUIsize + borderPadding, game.config.width,
-            borderUIsize * 2, 0x00FF00).setOrigin(0, 0);
+            borderUIsize * 2, 0x6EDCFA).setOrigin(0, 0);
         // white borders
         this.add.rectangle(0, 0, game.config.width, borderUIsize, 0xFFFFFF).setOrigin
             (0, 0);
@@ -76,7 +76,7 @@ class SinglePlayer extends Phaser.Scene {
         let scoreConfig = {
             fontFamily: 'Courier',
             fontSize: '28px',
-            backgroundColor: '#F3B141',
+            backgroundColor: '#46E0C9',
             color: '#843605',
             align: 'right',
             padding: {
@@ -208,7 +208,7 @@ class TwoPlayer extends Phaser.Scene {
 
         // green UI background
         this.add.rectangle(0, borderUIsize + borderPadding, game.config.width,
-            borderUIsize * 2, 0x00FF00).setOrigin(0, 0);
+            borderUIsize * 2, 0x6EDCFA).setOrigin(0, 0);
         // white borders
         this.add.rectangle(0, 0, game.config.width, borderUIsize, 0xFFFFFF).setOrigin
             (0, 0);
@@ -263,7 +263,7 @@ class TwoPlayer extends Phaser.Scene {
         let scoreConfig = {
             fontFamily: 'Courier',
             fontSize: '28px',
-            backgroundColor: '#F3B141',
+            backgroundColor: '#46E0C9',
             color: '#843605',
             align: 'right',
             padding: {

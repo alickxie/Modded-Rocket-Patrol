@@ -16,7 +16,7 @@ class Menu1 extends Phaser.Scene {
         let menuConfig = {
             fontFamily: 'Courier',
             fontSize: '28px',
-            backgroundColor: '#F3B141',
+            backgroundColor: '#46E0C9',
             color: '#843605',
             align: 'right',
             padding: {
@@ -96,7 +96,7 @@ class Menu2 extends Phaser.Scene {
         let menuConfig = {
             fontFamily: 'Courier',
             fontSize: '28px',
-            backgroundColor: '#F3B141',
+            backgroundColor: '#46E0C9',
             color: '#843605',
             align: 'right',
             padding: {
@@ -112,8 +112,10 @@ class Menu2 extends Phaser.Scene {
         keyDOWN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN);
 
         // show menu text
+        menuConfig.fontSize = '46px'
         this.add.text(game.config.width / 2, game.config.height / 2 - borderUIsize -
-            borderPadding, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
+            borderPadding*4, 'DUCK HUNT', menuConfig).setOrigin(0.5);
+        menuConfig.fontSize = '28px'
         this.add.text(game.config.width / 2, game.config.height / 2, 'P1: Use (A)(D) to move & (W) to fire',
             menuConfig).setOrigin(0.5);
         this.add.text(game.config.width / 2, game.config.height / 2 + borderUIsize +
